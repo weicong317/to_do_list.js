@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset = "utf-8">
+	<title>To Do List</title>
+</head>
+<body>
+	<h1>To Do List</h1>
+	<hr>
+	Enter do-to-item: 
+	<input id = "enter" type = "text">
+	<!-- initial a function when clicked the button -->
+	<button id = "add" onclick = myFunction()>Add</button>
+	<br>
+	<ul id = "list"></ul>
+	<script>
+		// initial a function
+		function myFunction(){
+			// if the input is not empty, it run
+			if (enter.value !== "") {
+				let valueStored = enter.value;
+				let list = document.getElementById("list");
+				// create new html tag li
+				let newList = document.createElement("li");
+				// give content to the element
+				newList.innerHTML = valueStored;
+				// append back to ul
+				list.appendChild(newList);
+				// empty the input again
+				enter.value = "";
+			}
+		}
+	</script>
+</body>
+</html>
